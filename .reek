@@ -1,2 +1,9 @@
 IrresponsibleModule:
   enabled: false
+
+TooManyStatements:
+  enabled: false
+
+exclude_paths:
+  - 'vendor'
+  - 'db/migrate'
