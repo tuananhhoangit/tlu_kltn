@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "coffee-rails", "~> 4.2"
+gem "devise"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "4.3.1"
 gem "mysql2", ">= 0.3.18", "< 0.5"
@@ -21,11 +22,9 @@ group :development, :test do
   gem "brakeman", require: false
   gem "bundler-audit"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "capybara", "~> 2.13"
   gem "database_cleaner"
   gem "eslint-rails"
   gem "factory_girl_rails"
-  gem "guard-rspec", require: false
   gem "jshint"
   gem "railroady"
   gem "rails_best_practices"
@@ -48,6 +47,10 @@ group :development do
 end
 
 group :test do
+  gem "capybara", "~> 2.13"
+  gem "faker"
+  gem "guard-rspec"
+  gem "launchy"
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "simplecov-json"
