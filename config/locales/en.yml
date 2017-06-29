@@ -1,33 +1,53 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  account: "Account"
+  layouts:
+    header:
+      glob: "GLOB"
+      search: "Search"
+      home: "Home"
+      users: "Users"
+      about: "About"
+      contact: "Contact"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Logout"
+    footer:
+      about_glob: "about glob"
+      lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt"
+      lorem2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt consectetur adipisicing elit"
+      head_office: "Ha Noi (Head office)"
+      kaengnam: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
+      toong: "TOONG 25T2 Hoàng Đạo Thúy, Trung Hòa Nhân Chính, Trung Hoà, Cầu Giấy, Hà Nội"
+      hn_edu: "Ha Noi Education"
+      home: "Home"
+      users: "Users"
+      about: "About"
+      contact: "Contact"
+      tuananh: "©2017 GLOB. Hoang Tuan Anh. TLU"
+      framgia: "Framgia Vietnam"
+      phone: "84-4-3795-5417"
+    application:
+      title: "FramgiaGlob"
+  static_pages:
+    home:
+      welcome: "Wellcome to GLOB - A new Blog Site by Framgia"
+      lorem: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+      signup: "Sign up"
+      signin: "Sign in"
+    contact:
+      back_to_home: "Back To Home"
+      contact_us: "contact us"
+      contact: "Contact"
+      toong: TOONG
+      toong_add: 25T2 Hoàng Đạo Thúy
+      mail: "example@mail.com"
+      maps: "Maps"
+      lastest_post: "Lastest posts"
+      phone: "666-777-888"
+    about:
+      about: About
+      about_us: "About Us"
+      lorem: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+      back_to_home: "Back To Home"
+      contact_us: "Contact us"
