@@ -23,6 +23,26 @@
     input {
       width: 100%;
     }
+
+    i {
+      color: $white;
+    }
+  }
+
+  .avatar {
+    padding-top: 10px;
+    position: relative;
+    text-align: left;
+
+    label {
+      color: $white;
+      display: block;
+    }
+
+    .picture {
+      @extend %avatar-ph;
+      display: inline-block;
+    }
   }
 
   .error-explanation {

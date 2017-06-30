@@ -1,2 +1,3 @@
 user:
   name_max_length: 50
+  avatar_size: 5
