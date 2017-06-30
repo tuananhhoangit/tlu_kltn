@@ -6,6 +6,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.boolean :is_admin
       t.string :encrypted_password, null: false, default: ""
       t.string :remember_digest
+      t.datetime :remember_created_at
 
       t.timestamps null: false
     end

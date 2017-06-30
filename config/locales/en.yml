@@ -1,5 +1,6 @@
 en:
   account: "Account"
+
   layouts:
     header:
       glob: "GLOB"
@@ -28,13 +29,15 @@ en:
       framgia: "Framgia Vietnam"
       phone: "84-4-3795-5417"
     application:
-      title: "FramgiaGlob"
+      title: "GLOB"
+
   static_pages:
     home:
       welcome: "Wellcome to GLOB - A new Blog Site by Framgia"
       lorem: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
       signup: "Sign up"
       signin: "Sign in"
+      have_acc: "or have an account?"
     contact:
       back_to_home: "Back To Home"
       contact_us: "contact us"
@@ -46,7 +49,30 @@ en:
       lastest_post: "Lastest posts"
       phone: "666-777-888"
     about:
+      about: About
       about_us: "About Us"
       lorem: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
       back_to_home: "Back To Home"
       contact_us: "Contact us"
+
+  errors:
+    messages:
+      not_saved:
+        one: "1 error prohibited!"
+        other: "%{count} errors prohibited!"
+
+  devise:
+    registrations:
+      new:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        pass_confirm: "Password Confirmation"
+        have_acc: "or you have an account?"
+    sessions:
+      new:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+        dont_have_acc: "or you don't have an account?"
+
