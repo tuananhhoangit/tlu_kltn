@@ -1,0 +1,61 @@
+<div class="banner">
+  <div class="container">
+    <h2><%= t ".contact_us" %></h2>
+    <%= link_to t(".back_to_home"), root_path, class: "back-home" %>
+  </div>
+</div>
+
+<div class="technology-1">
+  <div class="container">
+    <div class="col-md-9 technology-left">
+      <div class="business">
+        <div id="contact" class="contact">
+          <h3><%= t ".contact" %></h3>
+          <div class="contact-grids">
+           <div class="contact-icons">
+            <div class="contact-grid">
+              <div class="contact-fig">
+                <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+              </div>
+              <p><%= t ".phone" %></p>
+            </div>
+            <div class="contact-grid">
+              <div class="contact-fig1">
+                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+              </div>
+              <p><%= t ".toong" %>
+                <span><%= t ".toong_add" %></span></p>
+              </div>
+              <div class="contact-grid">
+                <div class="contact-fig2">
+                  <span class="glyphicon glyphicon-envelope2" aria-hidden="true"></span>
+                </div>
+                <p><%= link_to t(".mail"), "#" %></p>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="map">
+            <h3><%= t ".maps" %></h3>
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQyqXaKGsNTER4HmYZxfYcw8&key=AIzaSyAUcjUBrT-vTdpg2EcBkzUUi6euxWUmLPg"  style="border:0" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 technology-right-1">
+      <div class="blo-top">
+        <div class="tech-btm">
+          <%= image_tag "framgia.jpg", class:"img-responsive" %>
+        </div>
+      </div>
+      <div class="blo-top1">
+        <div class="tech-btm">
+          <h4><%= t ".lastet_post" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
