@@ -43,7 +43,7 @@ ul{
 	padding:0;
 }
 label{
-	margin:0;
+	margin: 5px 0;
 }
 .header-top {
         padding: 1.5em 0;
@@ -152,9 +152,6 @@ label{
     background: #fa4b2a;
 }
 /*--navigation--*/
-.navbar-nav .dropdown {
-    display: none;
-}
 ul.nav.navbar-nav li.active a {
     background:#464646 ! important;
     color: #fff ! important;
@@ -201,8 +198,31 @@ min-height: 550px;
     color: #fff;
     font-weight: 600;
     padding: 0.8em 2em;
+    margin: 0 5px;
     border: 2px solid #fff;
     background: rgba(255, 255, 255, 0.32);
+}
+.banner .signin {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    &:hover {
+        border: none;
+        background: none;
+        text-decoration: underline;
+    }
+}
+.banner .signup {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    &:hover {
+        border: none;
+        background: none;
+        text-decoration: underline;
+    }
 }
 .banner {
     .back-home {
@@ -228,6 +248,9 @@ min-height: 550px;
 .banner {
     padding: 10em 0 0;
     text-align: center;
+}
+.banner-signup {
+    padding: 7em 0 0;
 }
 .banner p {
     font-size: 1.2em;
