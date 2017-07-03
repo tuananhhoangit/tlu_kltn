@@ -2,7 +2,7 @@
   <div class="container">
     <h2><%= t ".welcome" %></h2>
     <p><%= t ".lorem" %></p>
-    <a href="#"><%= t ".signup" %></a>
-    <a href="#"><%= t ".signin" %></a>
+    <%= link_to t(".signup"), new_user_registration_path %>
+    <%= link_to t(".signin"), new_user_session_path %>
   </div>
 </div>
