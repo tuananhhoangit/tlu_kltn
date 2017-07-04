@@ -45,3 +45,31 @@
     vertical-align: bottom;
   }
 }
+
+%profile-info-a-ph {
+  a {
+    border: 1px solid $main-orange;
+    border-radius: 2px;
+    color: $main-orange;
+    display: inline-block;
+    margin-left: 20px;
+    padding: 0 20px;
+
+    &:hover {
+      background-color: $main-orange;
+      color: $white;
+    }
+  }
+}
+
+%action-bt-ph {
+  &:hover {
+    background-color: $btn-hover;
+    color: $main-orange;
+    transition: .5s all;
+  }
+
+  i {
+    color: $main-orange;
+  }
+}

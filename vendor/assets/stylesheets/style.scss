@@ -4,6 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
 html, body{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 100%;
@@ -286,7 +290,7 @@ min-height: 550px;
 }
 .blog-poast-info li i {
     font-size:1.5em;
-    color: #aeaeae;
+    color: #fa4b2a;
     margin-right: 0.3em;
     margin-top: 0px;
 	vertical-align:middle;
@@ -350,7 +354,7 @@ a.blog.orn{
     background: #c75830;
 }
 .tech-no {
-    position: absolute;
+    // position: absolute;
     top: -33px;
 }
 .technology {

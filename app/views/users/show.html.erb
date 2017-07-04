@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row profile">
+        <div class="col-md-4 profile-pic">
+          <%= image_tag @user.avatar, alt: @user.name %>
+        </div>
+        <div class="col-md-8 profile-info">
+          <div class="line name">
+            <%= @user.name %>
+            <% if can? :update, @user %>
+              <%= link_to t(".edit_profile"), edit_user_registration_path %>
+            <% end %>
+          </div>
+          <div class="line email"><%= @user.email %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,6 +19,6 @@ class User < ApplicationRecord
 
   def avatar_size
     return unless avatar.size > Settings.user.avatar_size.megabytes
-    errors.add :picture, t(".picture_validate")
+    errors.add :picture, I18n.t(".picture_validate")
   end
 end

@@ -89,3 +89,87 @@
     }
   }
 }
+
+.profile {
+  background-color: $white;
+  margin: 2em 1.6em 2em 2.65em;
+  padding: 2em;
+
+  .profile-pic {
+    img {
+      border: 4px solid $white;
+      border-radius: 2px;
+      height: 160px;
+      object-fit: cover;
+      width: 160px;
+    }
+  }
+
+  .profile-info {
+    .line {
+      @extend %profile-info-a-ph;
+      display: block;
+    }
+  }
+}
+
+.new-post-form {
+  background-color: $white;
+  margin: 2em 1.6em 2em 2.65em;
+  padding: 2em;
+
+  .create-post {
+    border-bottom: 1px solid $devine-grey;
+    font-size: 1.7em;
+    padding-bottom: 10px;
+  }
+
+  .title {
+    border: 0;
+    margin-left: 10px;
+    padding: 10px;
+    width: 100%;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .content {
+    border: 1px 0 0 solid $line-grey;
+    height: 7em;
+    margin-left: 10px;
+    padding: 10px;
+    resize: none;
+    width: 97%;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .actions {
+    border-top: 1px solid $line-grey;
+    margin: 0 10px;
+    padding: 0 10px;
+
+    .bt {
+      @extend %action-bt-ph;
+      background-color: $btn-background;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: normal;
+      padding: 5px 20px;
+    }
+
+    .pic-upload {
+      display: none;
+    }
+
+    .post {
+      border: 0;
+      float: right;
+      margin-top: 5px;
+    }
+  }
+}
