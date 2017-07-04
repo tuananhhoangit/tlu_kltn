@@ -11,3 +11,37 @@
     background-color: $error-red;
   }
 }
+
+%avatar-ph {
+  &:hover {
+    label {
+      background: $black-hover-btn;
+      display: block;
+      height: 40px;
+      margin: 4px;
+      padding: 10px 12px;
+    }
+  }
+
+  img {
+    border: 4px solid $white;
+    border-radius: 2px;
+    height: 130px;
+    object-fit: cover;
+    width: 130px;
+  }
+
+  .change-btn {
+    bottom: 0;
+    display: none;
+    left: 0;
+    margin: 0;
+    position: absolute;
+  }
+
+  input {
+    display: none;
+    padding-left: 15px;
+    vertical-align: bottom;
+  }
+}

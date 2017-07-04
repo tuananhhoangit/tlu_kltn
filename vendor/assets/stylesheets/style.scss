@@ -249,8 +249,16 @@ min-height: 550px;
     padding: 10em 0 0;
     text-align: center;
 }
+.banner-contact {
+    padding: 3em 0;
+    background-position: 0 -270px;
+    min-height: 0;
+}
 .banner-signup {
     padding: 7em 0 0;
+}
+.banner-edit {
+    padding: 3em 0 1em;
 }
 .banner p {
     font-size: 1.2em;
