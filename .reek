@@ -1,9 +1,19 @@
 IrresponsibleModule:
   enabled: false
 
+FeatureEnvy:
+  enabled: false
+
+UtilityFunction:
+  enabled: false
+
 TooManyStatements:
   enabled: false
 
 exclude_paths:
   - 'vendor'
   - 'db/migrate'
+
+'app/controllers':
+  InstanceVariableAssumption:
+    enabled: false

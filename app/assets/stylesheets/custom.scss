@@ -1,2 +1,71 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'color';
+@import 'placeholder';
+
+.user {
+  .field {
+    text-align: left;
+
+    .field-with-errors {
+      @extend %label-ph;
+      @extend %input-ph;
+    }
+
+    label {
+      color: $white;
+    }
+
+    .pass-validate {
+      color: $white;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .error-explanation {
+    padding-top: 10px;
+
+    h2 {
+      color: $error-red;
+      font-size: 1.5em;
+    }
+
+    .err-messages {
+      color: $error-red;
+      list-style: none;
+    }
+  }
+
+  .remember {
+    color: $white;
+    text-align: left;
+  }
+
+  .actions {
+    margin-top: 30px;
+
+    .bt {
+      background: $white-btn;
+      border: 2px solid $white;
+      color: $white;
+      font-size: 1em;
+      font-weight: 600;
+      height: 48px;
+      width: 110px;
+    }
+
+    .bt:hover {
+      background: $black-hover-btn;
+      border: 2px solid $black-border-hover;
+      color: $white;
+    }
+
+    .or {
+      color: $white;
+      padding: 0 10px;
+    }
+  }
+}

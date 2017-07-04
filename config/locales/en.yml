@@ -69,10 +69,21 @@ en:
         password: "Password"
         pass_confirm: "Password Confirmation"
         have_acc: "or you have an account?"
+        signup: "Sign up"
+        min_char: "characters minimum"
     sessions:
       new:
         email: "Email"
         password: "Password"
         remember_me: "Remember me"
         dont_have_acc: "or you don't have an account?"
+        signin: "Sign in"
+    shared:
+      links:
+        signin: "Sign in"
+        signup: "Sign up"
+        forgot_pass: "Forgot your password?"
+        confirm_instruction: "Didn't receive confirmation instructions?"
+        unlock_instruction: "Didn't receive unlock instructions?"
+        sign_with: "Sign in with %{omni}"
 

@@ -1,0 +1,13 @@
+@import 'color';
+
+%label-ph {
+  label {
+    color: $error-red;
+  }
+}
+
+%input-ph {
+  input {
+    background-color: $error-red;
+  }
+}
