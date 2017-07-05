@@ -99,3 +99,7 @@ en:
         unlock_instruction: "Didn't receive unlock instructions?"
         sign_with: "Sign in with %{omni}"
 
+  users:
+    show:
+      edit_profile: "Edit Profile"
+

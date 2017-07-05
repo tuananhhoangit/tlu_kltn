@@ -6,10 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 gem "bootstrap-sass", "3.3.7"
+gem "cancancan", "~> 1.10"
 gem "carrierwave", "1.1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"
+gem "faker"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "4.3.1"
 gem "mysql2", ">= 0.3.18", "< 0.5"
@@ -19,6 +21,7 @@ gem "rspec-html-matchers"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "will_paginate", "3.1.5"
 
 group :development, :test do
   gem "autoprefixer-rails"
@@ -52,7 +55,6 @@ end
 
 group :test do
   gem "capybara", "~> 2.13"
-  gem "faker"
   gem "guard-rspec"
   gem "launchy"
   gem "shoulda-matchers"

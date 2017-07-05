@@ -52,7 +52,7 @@
                 <%= t ".account" %><span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to t(".profile"), "#" %></li>
+                <li><%= link_to t(".profile"), current_user %></li>
                 <li><%= link_to t(".settings"), edit_user_registration_path %></li>
                 <li class="divider"></li>
                 <li><%= link_to t(".logout"), destroy_user_session_path,
