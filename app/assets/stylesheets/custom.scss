@@ -3,6 +3,47 @@
 @import 'color';
 @import 'placeholder';
 
+@mixin notice {
+  border-radius: 15px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  text-align: center;
+
+  .glyphicon {
+    font-size: 30px;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+}
+
+.notice-success {
+  @include notice;
+  background: $success-green-bg;
+
+  .glyphicon {
+    color: $success-green;
+  }
+
+  .message {
+    color: $success-green;
+    font-size: 18px;
+  }
+}
+
+.notice-danger {
+  @include notice;
+  background-color: $danger-red-bg;
+
+  .glyphicon {
+    color: $danger-red;
+  }
+
+  .message {
+    color: $danger-red;
+    font-size: 18px;
+  }
+}
+
 .user {
   .field {
     text-align: left;
@@ -136,7 +177,8 @@
   }
 
   .content {
-    border: 1px 0 0 solid $line-grey;
+    border: 0;
+    border-top: 1px solid $line-grey;
     height: 7em;
     margin-left: 10px;
     padding: 10px;

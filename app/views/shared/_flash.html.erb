@@ -1,0 +1,8 @@
+<% flash.each do |message_type, message| %>
+  <div class="col-md-4 col-md-offset-4 notice notice-<%= message_type %>">
+    <% if message_type == "success" %><i class="glyphicon glyphicon-ok-circle"></i>
+    <% else %><i class="glyphicon glyphicon-remove-circle"></i>
+    <% end %>
+    <span class="message"><%= message %></span>
+  </div>
+<% end %>

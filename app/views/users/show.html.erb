@@ -15,6 +15,23 @@
           <div class="line email"><%= @user.email %></div>
         </div>
       </div>
+
+      <% if user_signed_in? && @user == current_user %>
+        <div class="new-post-form">
+          <div class="create-post">
+            <i class="glyphicon glyphicon-pencil"></i>
+            <span><%= t ".create_post" %></span>
+          </div>
+          <%= render "shared/post_form" %>
+        </div>
+      <% end %>
+
+      <div class="main">
+        <% if @user.posts.any? %>
+          <%= render @posts %>
+          <%= will_paginate @posts %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

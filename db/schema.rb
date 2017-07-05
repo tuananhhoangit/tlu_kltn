@@ -38,8 +38,7 @@ ActiveRecord::Schema.define(version: 20170627065323) do
     t.text "content"
     t.string "picture"
     t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.date "created_at"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
