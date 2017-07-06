@@ -102,4 +102,17 @@ en:
   users:
     show:
       edit_profile: "Edit Profile"
+      create_post: "Create new post"
+
+  shared:
+    post_form:
+      new_title: "New post's title..."
+      new_content: "New post's content..."
+      add_picture: "Add picture"
+      post: "Post"
+
+  posts:
+    create:
+      success: "Post created successfully"
+      fail: "Failed to create new post"
 

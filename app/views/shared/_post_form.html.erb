@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <%= f.text_field :title, placeholder: t(".new_title"), class: "title" %>
+  <%= f.text_area :content, placeholder: t(".new_content"), class: "content" %>
+  <div class="actions">
+    <%= f.label :picture, class: "bt" do %>
+      <i class="glyphicon glyphicon-picture"></i>
+      <%= t ".add_picture" %>
+    <% end %>
+    <%= f.file_field :picture, accept: "image/jpeg, image/gif, image/png", class: "pic-upload" %>
+    <%= f.submit t(".post"), class: "bt post" %>
+  </div>
+<% end %>
