@@ -288,6 +288,12 @@ min-height: 550px;
 	font-size:0.8125em;
 	vertical-align:middle;
 }
+.blog-poast-info .show-cmt {
+    cursor: pointer;
+    &:hover {
+        color: #fa4b2a;
+    }
+}
 .blog-poast-info li i {
     font-size:1.5em;
     color: #fa4b2a;

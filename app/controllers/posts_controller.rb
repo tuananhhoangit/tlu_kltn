@@ -4,11 +4,10 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:success] = t ".success"
-      redirect_back fallback_location: root_path
     else
       flash[:danger] = t ".fail"
-      redirect_back fallback_location: root_path
     end
+    redirect_back fallback_location: root_path
   end
 
   private

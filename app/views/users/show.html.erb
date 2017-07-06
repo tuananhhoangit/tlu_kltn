@@ -22,13 +22,13 @@
             <i class="glyphicon glyphicon-pencil"></i>
             <span><%= t ".create_post" %></span>
           </div>
-          <%= render "shared/post_form" %>
+          <%= render "shared/post_form", post: @post %>
         </div>
       <% end %>
 
       <div class="main">
         <% if @user.posts.any? %>
-          <%= render @posts %>
+          <%= render @posts, user: @user %>
           <%= will_paginate @posts %>
         <% end %>
       </div>

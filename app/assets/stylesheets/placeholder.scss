@@ -1,5 +1,28 @@
 @import 'color';
 
+@mixin tooltip {
+  bottom: 100%;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+}
+
+%actions-tooltip {
+  &::after {
+    @include tooltip;
+    border: 5px solid transparent;
+    border-bottom-color: $white;
+    right: 16%;
+  }
+
+  &::before {
+    @include tooltip;
+    border: 7px solid transparent;
+    border-bottom-color: $devine-grey;
+    right: 13%;
+  }
+}
+
 %label-ph {
   label {
     color: $error-red;
@@ -71,5 +94,64 @@
 
   i {
     color: $main-orange;
+  }
+}
+
+%display-cmt-a-ph {
+  a {
+    display: inline-block;
+    float: left;
+
+    img {
+      height: 40px;
+      object-fit: cover;
+      width: 40px;
+    }
+  }
+}
+
+%display-cmt-info-child-ph {
+  &:hover {
+    .action-btn {
+      display: block;
+    }
+  }
+
+  .user {
+    a {
+      color: $main-orange;
+      font-weight: bold;
+    }
+  }
+
+  .content {
+    padding-left: 5px;
+  }
+
+  .action-btn {
+    color: $main-orange;
+    display: none;
+    float: right;
+    font-size: 12px;
+    padding-right: 10px;
+    position: relative;
+    text-align: right;
+
+    .actions {
+      @extend %actions-tooltip;
+      border: 1px solid $devine-grey;
+      font-size: 13px;
+      left: initial;
+      margin: initial;
+      min-width: initial;
+      padding: 10px 20px;
+      position: absolute;
+      right: 0;
+      top: 150%;
+    }
+  }
+
+  .timestamp {
+    display: block;
   }
 }
