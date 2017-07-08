@@ -115,4 +115,16 @@ en:
     create:
       success: "Post created successfully"
       fail: "Failed to create new post"
+    comment_form:
+      write_comment: "Write a comment ..."
+    post:
+      comments: "Comments"
+    comment:
+      you_sure: "You sure?"
+      posted: "Posted"
+      ago: "ago"
 
+  comments:
+    destroy:
+      comment_deleted: "Comment deleted"
+      del-cmt-fail: "Fail to delete comment"

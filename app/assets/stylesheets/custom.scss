@@ -132,7 +132,7 @@
 }
 
 .profile {
-  background-color: $white;
+  background: url('cover.jpg');
   margin: 2em 1.6em 2em 2.65em;
   padding: 2em;
 
@@ -149,6 +149,7 @@
   .profile-info {
     .line {
       @extend %profile-info-a-ph;
+      color: $white;
       display: block;
     }
   }
@@ -212,6 +213,49 @@
       border: 0;
       float: right;
       margin-top: 5px;
+    }
+  }
+}
+
+.display-comment {
+  list-style: none;
+  padding-top: 5px;
+
+  li {
+    @extend %display-cmt-a-ph;
+    height: 50px;
+    padding-bottom: 10px;
+
+    .info {
+      @extend %display-cmt-info-child-ph;
+      float: left;
+      padding-left: 10px;
+      width: 94%;
+    }
+  }
+}
+
+.create-comment {
+  clear: both;
+  padding-top: 10px;
+
+  img {
+    display: inline-block;
+    height: 40px;
+    object-fit: cover;
+    width: 40px;
+  }
+
+  .new-comment {
+    display: inline;
+
+    .cmt-box {
+      margin-left: 6px;
+      width: 93%;
+    }
+
+    .btn-cmt {
+      display: none;
     }
   }
 }

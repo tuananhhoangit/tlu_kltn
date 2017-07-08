@@ -1,0 +1,5 @@
+<%= image_tag current_user.avatar %>
+<%= form_for [post, comment], html: {class: "new-comment"} do |f| %>
+  <%= f.text_field :content, placeholder: t(".write_comment"), class: "cmt-box" %>
+  <%= f.submit class: "btn-cmt" %>
+<% end %>
