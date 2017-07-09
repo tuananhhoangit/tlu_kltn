@@ -13,4 +13,7 @@
 //= require jquery-1.11.1.min
 //= require bootstrap
 //= require rails-ujs
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require_tree .

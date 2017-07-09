@@ -27,12 +27,12 @@
         </div>
       <% end %>
 
-      <div class="main">
+      <ul class="main">
         <% if @user.posts.any? %>
           <%= render @posts, user: @user %>
           <%= will_paginate @posts %>
         <% end %>
-      </div>
+      </ul>
     </div>
   </div>
 </div>
