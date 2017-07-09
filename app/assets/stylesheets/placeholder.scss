@@ -155,3 +155,28 @@
     display: block;
   }
 }
+
+%user-name-ph {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+%figure-child {
+  &::before {
+    background: linear-gradient(to right, $first-gradient 0%, $second-gradient 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: -50%;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 40%;
+    z-index: 2;
+  }
+
+  &:hover::before {
+    animation: shine .5s;
+  }
+}

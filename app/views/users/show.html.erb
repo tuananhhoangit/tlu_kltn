@@ -1,3 +1,4 @@
+<%= provide :title, @user.name %>
 <div class="container">
   <div class="row">
     <div class="col-md-9">
@@ -22,7 +23,7 @@
             <i class="glyphicon glyphicon-pencil"></i>
             <span><%= t ".create_post" %></span>
           </div>
-          <%= render "shared/post_form", post: @post %>
+          <%= render "posts/post_form", post: @post %>
         </div>
       <% end %>
 
