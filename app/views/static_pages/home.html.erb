@@ -1,3 +1,33 @@
+<% if user_signed_in? %>
+<div class="banner banner-home">
+  <div class="container">
+    <h2><%= t ".welcome" %></h2>
+    <p><%= t ".lorem" %></p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="new-post-form">
+        <% if user_signed_in? %>
+          <div class="create-post">
+            <i class="glyphicon glyphicon-pencil"></i>
+            <span><%= t ".create_post" %></span>
+          </div>
+          <%= render "posts/post_form", post: @post %>
+        <% end %>
+      </div>
+
+      <div class="main">
+        <% if @user.posts.any? %>
+          <%= render @posts, user: @user %>
+          <%= will_paginate @posts %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
 <div class="banner">
   <div class="container">
     <h2><%= t ".welcome" %></h2>
@@ -6,3 +36,4 @@
     <%= link_to t(".signin"), new_user_session_path %>
   </div>
 </div>
+<% end %>

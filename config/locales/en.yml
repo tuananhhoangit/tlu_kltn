@@ -34,11 +34,12 @@ en:
 
   static_pages:
     home:
-      welcome: "Wellcome to GLOB - A new Blog Site by Framgia"
-      lorem: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+      welcome: "Wellcome to GLOB"
+      lorem: "“Love only grows by sharing. You can only have more for yourself by giving it away to others.” "
       signup: "Sign up"
       signin: "Sign in"
       have_acc: "or have an account?"
+      create_post: "Create new post"
     contact:
       back_to_home: "Back To Home"
       contact_us: "contact us"
@@ -103,13 +104,8 @@ en:
     show:
       edit_profile: "Edit Profile"
       create_post: "Create new post"
-
-  shared:
-    post_form:
-      new_title: "New post's title..."
-      new_content: "New post's content..."
-      add_picture: "Add picture"
-      post: "Post"
+    index:
+      all_user: "Users"
 
   posts:
     create:
@@ -119,6 +115,11 @@ en:
       write_comment: "Write a comment ..."
     post:
       comments: "Comments"
+    post_form:
+      new_title: "New post's title..."
+      new_content: "New post's content..."
+      add_picture: "Add picture"
+      post: "Post"
     comment:
       you_sure: "You sure?"
       posted: "Posted"

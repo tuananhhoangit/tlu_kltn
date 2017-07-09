@@ -4,6 +4,8 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.name_max_length}
   validate :avatar_size
 
+  scope :users_sort, ->{order id: :asc}
+
   has_many :posts, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy

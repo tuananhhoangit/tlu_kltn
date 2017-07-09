@@ -139,7 +139,7 @@
   .profile-pic {
     img {
       border: 4px solid $white;
-      border-radius: 2px;
+      border-radius: 15px;
       height: 160px;
       object-fit: cover;
       width: 160px;
@@ -256,6 +256,47 @@
 
     .btn-cmt {
       display: none;
+    }
+  }
+}
+
+.users {
+  list-style: none;
+  margin: 2em 0;
+
+  .user {
+    background: $white;
+    padding: 10px 15px;
+
+    figure {
+      @extend %figure-child;
+      display: inline-block;
+      position: relative;
+    }
+
+    @keyframes shine {
+      100% {
+        right: 100%;
+      }
+    }
+
+    img {
+      border: 4px solid $main-orange;
+      border-radius: 15px;
+      height: 100px;
+      object-fit: cover;
+      width: 100px;
+    }
+  }
+
+  .info {
+    display: inline-block;
+    margin-left: 10px;
+
+    .user-name {
+      @extend %user-name-ph;
+      color: $main-orange;
+      font-weight: bold;
     }
   }
 }
