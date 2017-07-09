@@ -6,7 +6,7 @@
       <li><a href="#" class="facebook-1 chrome"></a></li>
     </ul>
   </div>
-  <div class="tc-ch">
+  <div class="tc-ch post-item post-<%= post.id %>" post_id = "<%= post.id %>">
     <div class="tch-img">
       <%= image_tag post.picture, class: "img-responsive" %>
     </div>
@@ -31,8 +31,7 @@
     </div>
     <div class="comments">
       <ul class="display-comment">
-        <%= render partial: "posts/comment", collection: post.comments,
-          locals: {post: post} %>
+        <%= render post.comments %>
       </ul>
       <% if user_signed_in? %>
         <div class="create-comment">
@@ -44,3 +43,4 @@
   </div>
   <div class="clearfix"></div>
 </div>
+

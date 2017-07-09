@@ -123,8 +123,16 @@ en:
       you_sure: "You sure?"
       posted: "Posted"
       ago: "ago"
+      edit: "Edit"
 
   comments:
     destroy:
       comment_deleted: "Comment deleted"
       del-cmt-fail: "Fail to delete comment"
+    comment:
+      delete: "Delete"
+      edit: "Edit"
+      posted: "Posted"
+      ago: "ago"
+      save: "Save"
+      write_comment: "Write a comment..."
