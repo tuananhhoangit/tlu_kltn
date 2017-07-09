@@ -1,0 +1,27 @@
+<li id="cmt-<%= comment.id %>" class="comment-item cmt-<%= comment.id %>" comment_id = "<%= comment.id %>">
+  <%= link_to comment.user do %>
+    <%= image_tag comment.user_avatar %>
+  <% end %>
+  <%= form_for [comment.post, comment],
+    html: {class: "edit-comment", id: "form-edit-cmt-#{comment.id}"} do |f| %>
+    <%= f.text_field :content, placeholder: t(".write_comment"), class: "cmt-edit-box" %>
+    <%= f.submit t(".save"), class: "btn-edit-cmt" %>
+  <% end %>
+  <div class="info">
+    <span class="user"><%= link_to comment.user_name, comment.user %></span>
+    <span id="cmt-content-<%= comment.id %>" class="content"><%= comment.content %></span>
+    <div class="dropdown action-btn">
+      <i class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown"
+        role="button" aria-haspopup="true" aria-expanded="false">
+      </i>
+      <div class="actions dropdown-menu">
+        <%= link_to t(".delete"), [comment.post, comment], method: :delete,
+          class: "delete" %>
+        <%= content_tag :span, t(".edit"), class: "edit-btn" %>
+      </div>
+    </div>
+    <span class="timestamp">
+      <%= t ".posted" %> <%= time_ago_in_words comment.created_at %> <%= t ".ago" %>
+    </span>
+  </div>
+</li>

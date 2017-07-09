@@ -22,7 +22,8 @@
 
           <div class="field">
             <%= f.label :password, t(".password") %> <i>(<%= t ".blank_pass" %>)</i>
-            <%= f.password_field :password, autocomplete: "off", placeholder: t(".min_char") %>
+            <%= f.password_field :password, autocomplete: "off",
+              placeholder: t(".min_char") %>
           </div>
 
           <div class="field">
@@ -48,7 +49,6 @@
             <%= link_to t(".back"), :back %>
           </div>
         <% end %>
-
       </div>
     </div>
   </div>
