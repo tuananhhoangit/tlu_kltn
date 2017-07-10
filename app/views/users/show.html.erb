@@ -13,11 +13,17 @@
               <%= link_to t(".edit_profile"), edit_user_registration_path %>
             <% end %>
           </div>
+          <div class="follow-act-form">
+            <%= render "follow_form", user: @user if user_signed_in? %>
+          </div>
           <div class="line email"><%= @user.email %></div>
+          <section class="stats">
+            <%= render "shared/stats" %>
+          </section>
         </div>
       </div>
 
-      <% if user_signed_in? && @user == current_user %>
+      <% if can? :create, @post %>
         <div class="new-post-form">
           <div class="create-post">
             <i class="glyphicon glyphicon-pencil"></i>
