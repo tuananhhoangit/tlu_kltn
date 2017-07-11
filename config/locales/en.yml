@@ -160,3 +160,6 @@ en:
         created_at: "Created At"
         author: "Author"
         action: "Action"
+      destroy:
+        deleted: "Post Deteled"
+        fail_delete: "Fail to delete post"

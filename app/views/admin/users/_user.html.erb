@@ -9,7 +9,7 @@
     <%= content_tag :div, user.email, class: "email" %>
       <%= content_tag :div, class: "user-total-posts" do %>
         <span><%= t ".posts_owned" %>: </span>
-        <span><%= user.posts.count %></span>
+        <span><%= user.posts.size %></span>
       <% end %>
     <% unless current_user == user %>
       <%= link_to t(".delete"), user, method: :delete,

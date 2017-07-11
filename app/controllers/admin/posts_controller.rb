@@ -8,10 +8,11 @@ class Admin::PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by id: params[:id]
+
     if @post.destroy
-      flash[:succes] = "Deleted"
+      flash[:success] = t ".deleted"
     else
-      flash[:danger] = "Fail To Delete"
+      flash[:danger] = t".delete_fail"
     end
     redirect_back fallback_location: root_path
   end
