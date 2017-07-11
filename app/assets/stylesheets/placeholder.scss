@@ -180,3 +180,34 @@
     animation: shine .5s;
   }
 }
+
+%follow-act-form-ph {
+  .follow-btn {
+    background: $main-orange;
+    border-color: $main-orange;
+    padding: 3px 12px;
+    width: 120px;
+
+    &:hover {
+      background-color: $hover-orange;
+    }
+  }
+
+  .unfollow-btn {
+    background: transparent;
+    border-color: $main-orange;
+    color: $white;
+    padding: 3px 12px;
+    width: 120px;
+
+    &:hover {
+      background-color: $main-orange;
+    }
+  }
+}
+
+%stats-a-ph {
+  a {
+    color: $white;
+  }
+}

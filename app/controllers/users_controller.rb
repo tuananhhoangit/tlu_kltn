@@ -9,8 +9,29 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts.select(:id, :title, :content, :picture, :user_id,
-      :created_at).posts_sort.paginate page: params[:page],
+      :created_at).order(created_at: :desc).paginate page: params[:page],
       per_page: Settings.user.per_page
     @post = @user.posts.build
+    @build_follow = current_user.active_relationships.build
+  end
+
+  def following
+    users_select = @user.following.select(:id, :email, :name).order id: :asc
+    @users = users_select.paginate page: params[:page]
+    render :show_follow
+  end
+
+  def followers
+    users_select = @user.followers.select(:id, :email, :name).order id: :asc
+    @users = users_select.paginate page: params[:page]
+    render :show_follow
+  end
+
+  private
+
+  def load_user
+    @user = User.find_by id: params[:id]
+
+    valid_info @user
   end
 end

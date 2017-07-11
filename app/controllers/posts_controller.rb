@@ -27,6 +27,8 @@ class PostsController < ApplicationController
     end
   end
 
+  private
+
   def load_post
     @post = Post.find_by id: params[:id]
 

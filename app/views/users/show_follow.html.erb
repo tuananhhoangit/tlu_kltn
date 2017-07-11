@@ -1,0 +1,31 @@
+<% provide:title, @title %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row profile follows">
+        <div class="col-md-4 profile-pic">
+          <%= image_tag @user.avatar, alt: @user.name %>
+        </div>
+        <div class="col-md-8 profile-info">
+          <div class="line name">
+            <%= @user.name %>
+            <%= link_to "Profile", @user  %>
+          </div>
+          <div class="line email"><%= @user.email %></div>
+          <section class="stats">
+            <%= render "shared/stats" %>
+          </section>
+          <div class="follow-act-form">
+            <%= render "follow_form", user: @user if user_signed_in? %>
+          </div>
+        </div>
+      </div>
+
+      <ul class="row users">
+        <% if @users.any? %>
+          <%= render @users %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

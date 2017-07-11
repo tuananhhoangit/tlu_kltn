@@ -147,12 +147,37 @@
   }
 
   .profile-info {
+    padding-top: 5px;
+
     .line {
       @extend %profile-info-a-ph;
       color: $white;
-      display: block;
+    }
+
+    .name {
+      display: inline-block;
+      font: bold 20px Roboto Condensed;
+      margin-right: 20px;
+      vertical-align: bottom;
+    }
+
+    .follow-act-form {
+      @extend %follow-act-form-ph;
+      display: inline-block;
+    }
+
+    .email {
+      margin: 20px 0;
+    }
+
+    .stats {
+      @extend %stats-a-ph;
     }
   }
+}
+
+.follows {
+  margin: 2em 0;
 }
 
 .new-post-form {
@@ -261,11 +286,11 @@
 }
 
 .users {
+  background: $white;
   list-style: none;
   margin: 2em 0;
 
   .user {
-    background: $white;
     padding: 10px 15px;
 
     figure {
@@ -292,6 +317,8 @@
   .info {
     display: inline-block;
     margin-left: 10px;
+    position: relative;
+    z-index: 100;
 
     .user-name {
       @extend %user-name-ph;

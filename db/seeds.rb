@@ -13,5 +13,12 @@ users = User.order(:created_at).take 5
 5.times do
   title = Faker::Lorem.sentence Settings.post.title_lorem_sentences
   content = Faker::Lorem.sentence Settings.post.content_lorem_sentences
-  users.each {|user| user.posts.create! title: title, content: content}
+  users.each{|user| user.posts.create! title: title, content: content}
 end
+
+users = User.all
+user = users.first
+following = users[2..20]
+followers = users[3..15]
+following.each{|followed| user.follow followed}
+followers.each{|follower| follower.follow user}

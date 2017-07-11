@@ -14,7 +14,7 @@
       <h3><%= post.title %></h3>
       <p><%= post.content %></p>
     </div>
-    <% if current_user == post.user %>
+    <% if can? :modify, post or can? :destroy, post %>
       <div class="dropdown action-btn">
         <i class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown"
           role="button" aria-haspopup="true" aria-expanded="false">
@@ -47,13 +47,14 @@
         <%= render post.comments %>
       </ul>
       <% if user_signed_in? %>
-        <div class="create-comment">
-          <%= render "posts/comment_form", post: post,
-            comment: post.comments.build %>
-        </div>
+        <% if current_user.following? post.user or current_user == post.user %>
+          <div class="create-comment">
+            <%= render "posts/comment_form", post: post,
+              comment: post.comments.build %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
   <div class="clearfix"></div>
 </li>
-
