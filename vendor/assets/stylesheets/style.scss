@@ -1515,3 +1515,47 @@ h4.media-heading {
     font-size: 0.75em;
   }
 }
+.pagination {
+  display: block;
+}
+
+.total-posts {
+  a {
+    color: #333;
+
+    &:hover {
+      color: $main-orange;
+    }
+  }
+}
+
+.table {
+  background: white;
+  .table-title {
+    background-color: $main-orange;
+    color: white;
+
+    &:hover {
+      background-color: $main-orange;
+      color: white;
+    }
+  }
+  margin: 20px 0;
+
+  th {
+    padding: 15px 10px !important;
+  }
+
+  td {
+    padding: 10px !important;
+  }
+
+  .user_name {
+    a {
+      color: $main-orange;
+      &:hover {
+        color: $hover-orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<tr>
+  <td><%= post.id %></td>
+  <td><%= post.title %></td>
+  <td><%= post.created_at.strftime("%d/%m/%Y") %></td>
+  <td class = "user_name"><%= link_to post.user.name, post.user %></td>
+  <td><%= link_to t(".delete"), admin_post_path(post), method: :delete, class: "admin-delete-post" %></td>
+</tr>

@@ -1,0 +1,22 @@
+<% provide :title, t(".admin") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row statistics">
+        <div class="col-md-6">
+          <h3 class="total-users"><%= t ".total_users" %></h3>
+          <span class="count"><%= @users_size %></span>
+        </div>
+        <div class="col-md-6">
+          <h3 class="total-posts"><%= link_to t(".total_posts"), admin_posts_path %></h3>
+          <span class="count"><%= @posts_size %></span>
+        </div>
+      </div>
+      <%= will_paginate @users %>
+      <ul class="row users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate @users %>
+    </div>
+  </div>
+</div>

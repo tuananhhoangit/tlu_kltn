@@ -1,0 +1,19 @@
+<li class="user user-<%= user.id %> col-md-6">
+  <figure>
+    <%= link_to user do %>
+      <%= image_tag user.avatar %>
+    <% end %>
+  </figure>
+  <div class="info">
+    <%= link_to user.name, user, class: "user-name" %>
+    <%= content_tag :div, user.email, class: "email" %>
+      <%= content_tag :div, class: "user-total-posts" do %>
+        <span><%= t ".posts_owned" %>: </span>
+        <span><%= user.posts.count %></span>
+      <% end %>
+    <% unless current_user == user %>
+      <%= link_to t(".delete"), user, method: :delete,
+        data: {confirm: t(".sure")}, class: "del-user btn btn-primary" %>
+    <% end %>
+  </div>
+</li>

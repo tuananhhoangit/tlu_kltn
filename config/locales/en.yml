@@ -1,7 +1,7 @@
 en:
-  you_sure: "You sure?"
+  danger_not_admin: "Permission Denied"
+  welcome_admin: "Welcome Admin"
   account: "Account"
-  password_confirmation: "Password confirmation"
 
   layouts:
     header:
@@ -144,3 +144,19 @@ en:
       ago: "ago"
       save: "Save"
       write_comment: "Write a comment..."
+  admin:
+    admins:
+      index:
+        admin: "Admin"
+        total_users: "Total Users"
+        total_posts: "Total Posts"
+    users:
+      user:
+        posts_owned: "Posts owned"
+    posts:
+      index:
+        id: "ID"
+        title: "Title"
+        created_at: "Created At"
+        author: "Author"
+        action: "Action"
