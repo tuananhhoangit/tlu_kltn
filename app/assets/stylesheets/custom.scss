@@ -30,7 +30,8 @@
   }
 }
 
-.notice-danger {
+.notice-danger,
+.notice-alert {
   @include notice;
   background-color: $danger-red-bg;
 
@@ -296,7 +297,13 @@
     figure {
       @extend %figure-child;
       display: inline-block;
+      float: left;
       position: relative;
+    }
+
+    .info {
+      @extend %user-info-ph;
+      float: left;
     }
 
     @keyframes shine {
@@ -325,5 +332,21 @@
       color: $main-orange;
       font-weight: bold;
     }
+  }
+}
+
+.statistics {
+  background: $white;
+  margin: 1em 0;
+  padding: 15px 0;
+  text-align: center;
+
+  h3 {
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
+
+  span {
+    font-size: 20px;
   }
 }

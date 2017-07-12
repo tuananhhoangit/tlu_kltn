@@ -12,11 +12,20 @@ class UsersController < ApplicationController
       :created_at).order(created_at: :desc).paginate page: params[:page],
       per_page: Settings.user.per_page
     @post = @user.posts.build
-    @build_follow = current_user.active_relationships.build
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".user_deleted"
+    else
+      flash[:danger] = t ".fail_to_delete"
+    end
+    redirect_to admin_root_url
   end
 
   def following
-    users_select = @user.following.select(:id, :email, :name).order id: :asc
+    @title = t ".following"
+    users_select = @user.following.select(:id, :email, :name).order(id: :asc)
     @users = users_select.paginate page: params[:page]
     render :show_follow
   end

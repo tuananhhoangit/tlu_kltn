@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :destroy] do
     member do
       get :following, :followers
     end
@@ -14,4 +14,8 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :relationships, except: [:index, :new, :show]
+  namespace :admin do
+    root "admins#index", as: :root
+    resources :posts, only: [:index, :destroy]
+  end
 end

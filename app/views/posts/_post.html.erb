@@ -14,14 +14,16 @@
       <h3><%= post.title %></h3>
       <p><%= post.content %></p>
     </div>
-    <% if can? :modify, post or can? :destroy, post %>
+    <% if can? :destroy, post %>
       <div class="dropdown action-btn">
         <i class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown"
           role="button" aria-haspopup="true" aria-expanded="false">
         </i>
         <div class="actions dropdown-menu">
           <%= link_to t(".delete"), post, method: :delete, class: "action delete-post" %>
-          <%= content_tag :span, t(".edit"), class: "action edit-post", post_id: post.id %>
+          <% if can? :modify, post %>
+            <%= content_tag :span, t(".edit"), class: "action edit-post", post_id: post.id %>
+          <% end %>
         </div>
       </div>
     <% end %>

@@ -75,6 +75,8 @@
     border-radius: 2px;
     color: $main-orange;
     display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
     margin-left: 20px;
     padding: 0 20px;
 
@@ -209,5 +211,18 @@
 %stats-a-ph {
   a {
     color: $white;
+  }
+}
+
+%user-info-ph {
+  .del-user {
+    background: $main-orange;
+    border-color: $main-orange;
+    color: $white;
+    padding: 2px 15px;
+
+    &:hover {
+      background: $hover-orange;
+    }
   }
 }

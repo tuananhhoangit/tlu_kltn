@@ -1,5 +1,9 @@
 <li class="user user-<%= user.id %> col-md-6">
-  <figure><%= image_tag user.avatar %></figure>
+  <figure>
+    <%= link_to user do %>
+      <%= image_tag user.avatar %>
+    <% end %>
+  </figure>
   <div class="info">
     <%= link_to user.name, user, class: "user-name" %>
     <%= content_tag :div, user.email, class: "email" %>

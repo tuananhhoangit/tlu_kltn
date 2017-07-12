@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <table class = "table table-sm table-hover">
+        <tr class = "table-title">
+          <th><%= t ".id" %></th>
+          <th><%= t ".title" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".author" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+        <%= render @posts %>
+      </table>
+    </div>
+  </div>
+</div>
