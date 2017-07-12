@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :load_post, only: [:update, :destroy]
+  load_and_authorize_resource
 
   def create
     @post = current_user.posts.build(id: params[:id], title: params[:title], content: params[:content])
@@ -25,13 +25,5 @@ class PostsController < ApplicationController
     else
       render json: {status: :error}
     end
-  end
-
-  private
-
-  def load_post
-    @post = Post.find_by id: params[:id]
-
-    valid_info @post
   end
 end

@@ -29,6 +29,12 @@ class User < ApplicationRecord
     following.include? other_user
   end
 
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+      WHERE follower_id = :user_id"
+    Post.load_feed id, following_ids
+  end
+
   private
 
   def avatar_size

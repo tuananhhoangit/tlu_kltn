@@ -9,5 +9,6 @@ post:
   content_lorem_sentences: 20
   title_lorem_sentences: 3
   picture_size: 5
+  post_per_page: 10
 admin:
   date_format: "%d/%m/%Y"

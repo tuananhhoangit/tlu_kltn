@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :load_post, only: [:create, :update, :destroy]
-  before_action :load_comment, only: [:update, :destroy]
 
   def create
     @comment = @post.comments.build content: params[:comment][:content],
@@ -35,13 +36,6 @@ class CommentsController < ApplicationController
     @post = Post.find_by id: params[:post_id]
 
     valid_info @post
-  end
-
-  def load_comment
-    @post = Post.find_by id: params[:post_id]
-    @comment = @post.comments.find_by id: params[:id]
-
-    valid_info @comment
   end
 
   def comment_params

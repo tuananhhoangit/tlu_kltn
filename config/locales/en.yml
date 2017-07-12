@@ -2,6 +2,7 @@ en:
   danger_not_admin: "Permission Denied"
   welcome_admin: "Welcome Admin"
   account: "Account"
+  you_sure: "You sure?"
 
   layouts:
     header:
@@ -160,6 +161,8 @@ en:
         created_at: "Created At"
         author: "Author"
         action: "Action"
+      post:
+        delete: "Delete"
       destroy:
         deleted: "Post Deteled"
         fail_delete: "Fail to delete post"

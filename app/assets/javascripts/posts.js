@@ -78,4 +78,26 @@ $(document).ready(function() {
     }
     return false;
   });
+
+  $('body').on('click', '.admin-delete-post', function(event){
+    event.preventDefault();
+    var self = $(this);
+    var r = confirm(I18n.t('you_sure'));
+    if(r == true) {
+      $.ajax({
+        type: 'DELETE',
+        url: self.attr('href'),
+        dataType: 'json'
+      })
+        .done(function (response) {
+          if (response.status == 'success') {
+            self.closest('tr').slideUp(400);
+          }
+        })
+        .fail(function() {
+          alert('fail');
+        });
+    }
+    return false;
+  });
 });
