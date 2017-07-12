@@ -4,12 +4,16 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
 
   belongs_to :user
-
   scope :posts_sort, ->{order created_at: :desc}
+
+  scope :load_feed, lambda{|id, following_ids|
+    where "user_id IN (#{following_ids}) OR user_id = :user_id",
+      following_ids: following_ids, user_id: id
+  }
 
   mount_uploader :picture, PictureUploader
 
-  validates :user, presence: true
+  validates :user_id, presence: true
   validates :content, presence: true, length:
     {maximum: Settings.post.content_max_length}
   validates :title, presence: true, length:

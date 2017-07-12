@@ -31,7 +31,7 @@
       <ul>
         <li>
           <i class="glyphicon glyphicon-user"></i>
-          <a class="admin" href="#"><%= post.user.name %></a>
+          <%= link_to post.user.name, post.user %>
         </li>
         <li>
           <i class="glyphicon glyphicon-calendar"></i><%= post.created_at %>
@@ -46,7 +46,7 @@
     </div>
     <div class="comments">
       <ul class="display-comment">
-        <%= render post.comments %>
+        <%= render post.comments, user: @user %>
       </ul>
       <% if user_signed_in? %>
         <% if current_user.following? post.user or current_user == post.user %>

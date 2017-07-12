@@ -10,10 +10,9 @@ class Admin::PostsController < ApplicationController
     @post = Post.find_by id: params[:id]
 
     if @post.destroy
-      flash[:success] = t ".deleted"
+      render json: {status: :success}
     else
-      flash[:danger] = t".delete_fail"
+      render json: {status: :error}
     end
-    redirect_back fallback_location: root_path
   end
 end

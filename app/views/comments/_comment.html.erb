@@ -10,16 +10,20 @@
   <div class="info">
     <span class="user"><%= link_to comment.user_name, comment.user %></span>
     <span id="cmt-content-<%= comment.id %>" class="content"><%= comment.content %></span>
-    <div class="dropdown action-btn">
-      <i class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown"
-        role="button" aria-haspopup="true" aria-expanded="false">
-      </i>
-      <div class="actions dropdown-menu">
-        <%= link_to t(".delete"), [comment.post, comment], method: :delete,
-          class: "delete" %>
-        <%= content_tag :span, t(".edit"), class: "edit-btn" %>
+    <% if can? :destroy, comment %>
+      <div class="dropdown action-btn">
+        <i class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown"
+          role="button" aria-haspopup="true" aria-expanded="false">
+        </i>
+        <div class="actions dropdown-menu">
+            <%= link_to t(".delete"), [comment.post, comment], method: :delete,
+              class: "delete" %>
+          <% if can? :modify, comment %>
+            <%= content_tag :span, t(".edit"), class: "edit-btn" %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <span class="timestamp">
       <%= t ".posted" %> <%= time_ago_in_words comment.created_at %> <%= t ".ago" %>
     </span>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_resource
+  load_and_authorize_resource
 
   def index
     users_select = User.select(:id, :name, :email, :avatar).users_sort
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = t ".following"
     users_select = @user.following.select(:id, :email, :name).order(id: :asc)
     @users = users_select.paginate page: params[:page]
     render :show_follow

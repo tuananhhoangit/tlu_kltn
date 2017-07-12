@@ -21,6 +21,7 @@
 /.framgia-ci-reports/*
 /config/database.yml
 /config/secrets.yml
+config/locales/database.yml
 /coverage/
 
 config/settings.local.yml
