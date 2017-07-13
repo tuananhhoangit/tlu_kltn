@@ -1,14 +1,15 @@
 <li class="tech-no">
   <div class="soci">
     <ul>
-      <li><a href="#" class="facebook-1"></a></li>
-      <li><a href="#" class="facebook-1 twitter"></a></li>
-      <li><a href="#" class="facebook-1 chrome"></a></li>
+      <%= social_share_button_tag(@post.title, :allow_sites => %w(facebook)) %>
+      <%= social_share_button_tag(@post.title, :allow_sites => %w(twitter)) %>
+      <%= social_share_button_tag(@post.title, :allow_sites => %w(google_plus)) %>
     </ul>
   </div>
   <div class="tc-ch post-item post-<%= post.id %>" id = "post-<%= post.id %>" post_id = "<%= post.id %>">
+
     <div class="tch-img">
-      <%= image_tag post.picture, class: "img-responsive" %>
+      <a href="singlepage.html"><%= image_tag post.picture, class: "img-responsive" %></a>
     </div>
     <div class="main-info">
       <h3><%= post.title %></h3>
