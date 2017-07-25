@@ -6,19 +6,19 @@ $(document).ready(function(){
 
   $('body').on('submit', '.new-comment', function(event){
     event.preventDefault();
-    var self = $(this);
-    var post_id = self.closest('.post-item').attr('post_id');
-    var params = self.serialize();
+    var form_comment = $(this);
+    var post_id = $(this).closest('.post-item').attr('post_id');
+    var params = $(this).serialize();
     $.ajax({
-      url: self.attr('action'),
+      url: form_comment.attr('action'),
       type: 'POST',
       dataType: 'json',
       data: params,
     })
       .done(function(response) {
         if (response.status == 'success') {
-          self.closest('.post-'+post_id).find('.display-comment').append(response.html);
-          self.find('.cmt-box').val('');
+          form_comment.closest('.post-'+post_id).find('.display-comment').append(response.html);
+          form_comment.find('.cmt-box').val('');
           $('.edit-comment').hide();
         }
       });
@@ -28,18 +28,17 @@ $(document).ready(function(){
   $('.edit-comment').hide();
   $('body').on('click', '.edit-btn', function(event) {
     event.preventDefault();
-    var self = $(this);
-    self.closest('.info').hide();
+    $(this).closest('.info').hide();
     $('.edit-comment').hide();
-    self.closest('.info').prev().show();
+    $(this).closest('.info').prev().show();
   });
 
   $('body').on('submit', '.edit-comment', function(event) {
     event.preventDefault();
-    var self = $(this);
-    var new_cmt = self.find('.cmt-edit-box').val();
-    var url_patch = self.next().find('.delete').attr('href');
-    var params = self.serialize();
+    var edit_cmt_form = $(this);
+    var new_cmt = $(this).find('.cmt-edit-box').val();
+    var url_patch = $(this).next().find('.delete').attr('href');
+    var params = $(this).serialize();
     $.ajax({
       url: url_patch,
       type: 'PATCH',
@@ -48,9 +47,9 @@ $(document).ready(function(){
     })
       .done(function(response) {
         if (response.status == 'success') {
-          self.next().find('.content').text(new_cmt);
-          self.hide();
-          self.next().show();
+          edit-cmt-form.next().find('.content').text(new_cmt);
+          edit-cmt-form.hide();
+          edit-cmt-form.next().show();
         }
       });
     return false;
@@ -58,17 +57,17 @@ $(document).ready(function(){
 
   $('body').on('click','.delete', function(event) {
     event.preventDefault();
-    var self = $(this);
+    var delete_btn = $(this);
     var r = confirm('You sure');
     if(r == true) {
       $.ajax({
         type: 'DELETE',
-        url: self.attr('href'),
+        url: delete_btn.attr('href'),
         dataType: 'json'
       })
         .done(function (response) {
           if (response.status == 'success') {
-            self.closest('.comment-item').fadeOut('normal');
+            delete_btn.closest('.comment-item').fadeOut('normal');
           }
         });
     }
