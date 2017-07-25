@@ -1,18 +1,18 @@
 <li class="tech-no">
   <div class="soci">
-    <ul>
-      <%= social_share_button_tag(@post.title, :allow_sites => %w(facebook)) %>
-      <%= social_share_button_tag(@post.title, :allow_sites => %w(twitter)) %>
-      <%= social_share_button_tag(@post.title, :allow_sites => %w(google_plus)) %>
+    <ul class="blank">
     </ul>
   </div>
   <div class="tc-ch post-item post-<%= post.id %>" id = "post-<%= post.id %>" post_id = "<%= post.id %>">
 
     <div class="tch-img">
-      <a href="singlepage.html"><%= image_tag post.picture, class: "img-responsive" %></a>
+    <%= link_to post do %>
+      <%= image_tag post.picture, class: "img-responsive" %>
+    <% end %>
     </div>
     <div class="main-info">
-      <h3><%= post.title %></h3>
+      <h3><%= link_to post.title, post %></h3>
+      <h5><%= post.all_tags %></h5>
       <p><%= post.content %></p>
     </div>
     <% if can? :destroy, post %>
@@ -35,11 +35,12 @@
           <%= link_to post.user.name, post.user %>
         </li>
         <li>
-          <i class="glyphicon glyphicon-calendar"></i><%= post.created_at %>
+          <i class="glyphicon glyphicon-calendar"></i>
+          <%= post.created_at.localtime().strftime("%I:%M %d.%m.%Y") %>
         </li>
         <li class="show-cmt">
           <i class="glyphicon glyphicon-comment"></i>
-          <span class="p-blog" href="#">
+          <span class="p-blog">
             <%= post.comments.size %> <%= t ".comments" %>
           </span>
         </li>

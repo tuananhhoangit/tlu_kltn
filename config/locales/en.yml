@@ -2,7 +2,10 @@ en:
   danger_not_admin: "Permission Denied"
   welcome_admin: "Welcome Admin"
   account: "Account"
+  welcome_admin: "Welcome Admin"
+  danger_not_admin: "Permission Denied"
   you_sure: "You sure?"
+  create_tags: "Create some tags"
 
   layouts:
     header:
@@ -128,6 +131,7 @@ en:
       new_content: "New post's content..."
       add_picture: "Add picture"
       post: "Post"
+      save: "Save"
     comment:
       you_sure: "You sure?"
       posted: "Posted"
@@ -145,6 +149,8 @@ en:
       ago: "ago"
       save: "Save"
       write_comment: "Write a comment..."
+    comment_form:
+      write_comment: "Write a comment..."
   admin:
     admins:
       index:
@@ -154,6 +160,7 @@ en:
     users:
       user:
         posts_owned: "Posts owned"
+        delete: "Delete"
     posts:
       index:
         id: "ID"

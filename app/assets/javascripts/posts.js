@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.save').hide();
   $('body').on('click', '.edit-post', function(event){
     event.preventDefault();
     var post_id = $(this).attr('post_id');
@@ -7,52 +8,36 @@ $(document).ready(function() {
     $(this).closest('.main').prev().find('span').text('Edit post');
     $('.title').val(title);
     $('.content').val(content);
-    $('.post').attr({'post_id': post_id, 'action': 'edit'});
+    $('.save').attr('post_id', post_id);
+    $('.post').hide();
+    $('.save').show();
   });
 
-  $('body').on('click', '.post', function(event){
+  $('body').on('click', '.save', function(event){
     event.preventDefault();
     var new_title = $('.title').val();
     var new_content = $('.content').val();
     var post_id = $(this).attr('post_id');
-    if ($(this).attr('action') == 'edit') {
-      $.ajax({
-        url: '/posts/' + post_id,
-        type: 'PUT',
-        dataType: 'json',
-        data: {id: post_id, title: new_title, content: new_content},
+    $.ajax({
+      url: '/posts/' + post_id,
+      type: 'PUT',
+      dataType: 'json',
+      data: {id: post_id, title: new_title, content: new_content},
+    })
+      .done(function(response) {
+        if (response.status == 'success') {
+          $('#post-' + post_id).find('h3').text(new_title);
+          $('#post-' + post_id).find('p').text(new_content);
+          $('.title').val('');
+          $('.content').val('');
+          $('.save').hide();
+          $('.post').show();
+        }
       })
-        .done(function(response) {
-          if (response.status == 'success') {
-            $('#post-' + post_id).find('h3').text(new_title);
-            $('#post-' + post_id).find('p').text(new_content);
-            $('.title').val('');
-            $('.content').val('');
-          }
-        })
-        .fail(function() {
-          alert('fail');
-        });
-      return false;
-    } else {
-      $.ajax({
-        url: '/posts',
-        type: 'POST',
-        dataType: 'json',
-        data: {id: post_id, title: new_title, content: new_content},
-      })
-        .done(function(response) {
-          if (response.status == 'success') {
-            $('.main').prepend(response.html);
-            $('.title').val('');
-            $('.content').val('');
-          }
-        })
-        .fail(function() {
-          alert('fail');
-        });
-      return false;
-    }
+      .fail(function() {
+        alert('fail');
+      });
+    return false;
   });
 
   $('body').on('click', '.delete-post', function(event){

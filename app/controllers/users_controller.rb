@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :valid_user, only: :destroy
   load_and_authorize_resource
 
   def index
@@ -24,22 +25,22 @@ class UsersController < ApplicationController
   end
 
   def following
+    @title = t ".following"
     users_select = @user.following.select(:id, :email, :name).order(id: :asc)
     @users = users_select.paginate page: params[:page]
     render :show_follow
   end
 
   def followers
-    users_select = @user.followers.select(:id, :email, :name).order id: :asc
+    @title = t ".followers"
+    users_select = @user.followers.select(:id, :email, :name).order(id: :asc)
     @users = users_select.paginate page: params[:page]
     render :show_follow
   end
 
   private
 
-  def load_user
-    @user = User.find_by id: params[:id]
-
+  def valid_user
     valid_info @user
   end
 end

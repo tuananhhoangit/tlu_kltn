@@ -47,9 +47,9 @@ $(document).ready(function(){
     })
       .done(function(response) {
         if (response.status == 'success') {
-          edit-cmt-form.next().find('.content').text(new_cmt);
-          edit-cmt-form.hide();
-          edit-cmt-form.next().show();
+          edit_cmt_form.next().find('.content').text(new_cmt);
+          edit_cmt_form.hide();
+          edit_cmt_form.next().show();
         }
       });
     return false;
