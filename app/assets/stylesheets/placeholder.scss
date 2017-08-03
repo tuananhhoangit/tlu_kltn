@@ -103,12 +103,17 @@
   a {
     display: inline-block;
     float: left;
+    color: $delete-black;
 
     img {
       height: 40px;
       object-fit: cover;
       width: 40px;
     }
+  }
+
+  .edit-btn {
+    cursor: pointer;
   }
 }
 
@@ -229,6 +234,21 @@
 
 %edit-comment-ph {
   .cmt-edit-box {
-    width: 87%;
+    width: 88%;
+  }
+
+  .btn-edit-cmt {
+    background-color: $btn-background;
+    border-radius: 16px;
+    border: 0;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 5px 20px;
+
+    &:hover {
+      background-color: $btn-hover;
+      color: $main-orange;
+      transition: .5s all;
+    }
   }
 }

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  if ($('.follow-btn').attr('value') == 'Follow') {
+    $('.create-comment').hide();
+  }
   $('body').on('click', '.follow-btn', function(event) {
     event.preventDefault();
     var user_id = $(this).attr('user_id');
@@ -12,6 +15,7 @@ $(document).ready(function() {
         if (response.status == 'success') {
           $('.follow-act-form').html(response.btn_html);
           $('.followers').text(parseInt($('.followers').text()) + 1);
+          $('.create-comment').show();
         }
       })
       .fail(function() {
@@ -33,6 +37,7 @@ $(document).ready(function() {
         if (response.status == 'success') {
           $('.follow-act-form').html(response.btn_html);
           $('.followers').text(parseInt($('.followers').text()) - 1);
+          $('.create-comment').hide();
         }
       })
       .fail(function() {
