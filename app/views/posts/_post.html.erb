@@ -51,12 +51,10 @@
         <%= render post.comments, user: @user %>
       </ul>
       <% if user_signed_in? %>
-        <% if current_user.following? post.user or current_user == post.user %>
           <div class="create-comment">
             <%= render "posts/comment_form", post: post,
               comment: post.comments.build %>
           </div>
-        <% end %>
       <% end %>
     </div>
   </div>

@@ -13,19 +13,18 @@
         <div id="contact" class="contact">
           <h3><%= t ".contact" %></h3>
           <div class="contact-grids">
-           <div class="contact-icons">
-            <div class="contact-grid">
-              <div class="contact-fig">
-                <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+            <div class="contact-icons">
+              <div class="contact-grid">
+                <div class="contact-fig">
+                  <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+                </div>
+                <p><%= t ".phone" %></p>
               </div>
-              <p><%= t ".phone" %></p>
-            </div>
-            <div class="contact-grid">
-              <div class="contact-fig1">
-                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-              </div>
-              <p><%= t ".toong" %>
-                <span><%= t ".toong_add" %></span></p>
+              <div class="contact-grid">
+                <div class="contact-fig1">
+                  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                </div>
+                <p><%= t ".tlu_add" %></p>
               </div>
               <div class="contact-grid">
                 <div class="contact-fig2">
@@ -38,25 +37,23 @@
           </div>
           <div class="map">
             <h3><%= t ".maps" %></h3>
-            <iframe
-              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQyqXaKGsNTER4HmYZxfYcw8&key=AIzaSyAUcjUBrT-vTdpg2EcBkzUUi6euxWUmLPg"  style="border:0" allowfullscreen>
-            </iframe>
-          </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.7036807820998!2d105.81421450609074!3d20.97630181474997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x89435a3528118ff5!2sThang+Long+University!5e0!3m2!1sen!2sus!4v1501728419568" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
-    <div class="col-md-3 technology-right-1">
-      <div class="blo-top">
-        <div class="tech-btm">
-          <%= image_tag "framgia.jpg", class:"img-responsive" %>
-        </div>
-      </div>
-      <div class="blo-top1">
-        <div class="tech-btm">
-          <h4><%= t ".lastet_post" %></h4>
-        </div>
-      </div>
-    </div>
-    <div class="clearfix"></div>
   </div>
+  <div class="col-md-3 technology-right-1">
+    <div class="blo-top">
+      <div class="tech-btm">
+        <%= image_tag "framgia.jpg", class:"img-responsive" %>
+      </div>
+    </div>
+    <div class="blo-top1">
+      <div class="tech-btm">
+        <h4><%= t ".lastet_post" %></h4>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
 </div>
