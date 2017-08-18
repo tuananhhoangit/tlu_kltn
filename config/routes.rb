@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :posts, except: [:index, :new] do
+  resources :posts, except: [:new] do
     resources :comments
   end
   resources :relationships, except: [:index, :new, :show]

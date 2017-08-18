@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    if params[:search]
+      @posts = Post.search_post(params[:search]).posts_sort.paginate page: params[:page],
+        per_page: Settings.user.per_page
+    else
+      posts_select = Post.select(:id, :title, :content, :created_at, :picture, :user_id).posts_sort
+      @posts = posts_select.paginate page: params[:page],
+        per_page: Settings.user.per_page
+    end
+  end
+
   def create
     @post = current_user.posts.build post_params
 

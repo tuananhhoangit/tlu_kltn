@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validate :avatar_size
 
   scope :users_sort, ->{order id: :asc}
+  scope :search_user, ->keywords{where "name LIKE ?", "%#{keywords}%"}
 
   has_many :posts, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,

@@ -3,9 +3,14 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    users_select = User.select(:id, :name, :email, :avatar).users_sort
-    @users = users_select.paginate page: params[:page],
-      per_page: Settings.user.per_page
+    if params[:search]
+      @users = User.search_user(params[:search]).order(:name).paginate page: params[:page],
+        per_page: Settings.user.per_page
+    else
+      users_select = User.select(:id, :name, :email, :avatar).users_sort
+      @users = users_select.paginate page: params[:page],
+        per_page: Settings.user.per_page
+    end
   end
 
   def show

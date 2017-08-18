@@ -6,11 +6,13 @@ en:
   danger_not_admin: "Permission Denied"
   you_sure: "You sure?"
   create_tags: "Create some tags"
+  search_posts: "Search posts..."
+  search_users: "Search users..."
 
   layouts:
     header:
       glob: "GLOB"
-      search: "Search"
+      search_users: "Search users..."
       home: "Home"
       users: "Users"
       about: "About"
@@ -19,6 +21,10 @@ en:
       profile: "Profile"
       settings: "Settings"
       logout: "Logout"
+      posts: "New Posts"
+      users_search: "Search users"
+      posts_search: "Search posts"
+      required_mess: "Type something to search"
     footer:
       about_glob: "about glob"
       lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt"
@@ -115,6 +121,8 @@ en:
       unfollow: "Unfollow"
 
   posts:
+    index:
+      all_posts: "All Posts"
     create:
       success: "Post created successfully"
       fail: "Failed to create new post"
