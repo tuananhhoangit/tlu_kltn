@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   scope :posts_sort, ->{order created_at: :desc}
+  scope :search_post, ->keywords{where "title LIKE ?", "%#{keywords}%"}
 
   scope :load_feed, lambda{|id, following_ids|
     where "user_id IN (#{following_ids}) OR user_id = :user_id",

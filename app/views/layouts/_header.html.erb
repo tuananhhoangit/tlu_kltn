@@ -7,20 +7,23 @@
         <% end %>
       </div>
       <div class="search">
-        <form>
-          <input type="text" placeholder="<%= t".search" %>">
+        <form class="search-form" action="users" method="get">
+          <input class="input-search" type="text"
+            placeholder="<%= t ".search_users" %>" name="search" required=""
+            oninvalid="this.setCustomValidity('<%= t ".required_mess" %>')">
           <input type="submit" value="">
         </form>
       </div>
       <div class="social">
         <ul>
-          <li><%= link_to "", "#", class: "facebook" %></li>
-          <li><%= link_to "", "#", class: "facebook twitter" %></li>
-          <li><%= link_to "", "#", class: "facebook chrome" %></li>
-          <li><%= link_to "", "#", class: "facebook in" %></li>
-          <li><%= link_to "", "#", class: "facebook beh" %></li>
-          <li><%= link_to "", "#", class: "facebook vem" %></li>
-          <li><%= link_to "", "#", class: "facebook yout" %></li>
+          <li class="select-search-users">
+            <%= t ".users_search" %>
+            <i class="glyphicon glyphicon-search"></i>
+          </li>
+          <li class="select-search-posts">
+            <%= t ".posts_search" %>
+            <i class="glyphicon glyphicon-search"></i>
+          </li>
         </ul>
       </div>
       <div class="clearfix"></div>
@@ -43,6 +46,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to t(".home"), root_path %></li>
           <li><%= link_to t(".users"), users_path %></li>
+          <li><%= link_to t(".posts"), posts_path %></li>
           <li><%= link_to t(".about"), about_path %></li>
           <li><%= link_to t(".contact"), contact_path %></li>
           <% if user_signed_in? %>
