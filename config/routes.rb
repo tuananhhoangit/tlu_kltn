@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :posts, except: [:new] do
     resources :comments
+    resources :likes, only: [:create, :destroy]
   end
   resources :relationships, except: [:index, :new, :show]
   namespace :admin do

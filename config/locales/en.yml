@@ -179,3 +179,9 @@ en:
       destroy:
         deleted: "Post Deteled"
         fail_delete: "Fail to delete post"
+
+  likes:
+    like:
+      like: "Like"
+    unlike:
+      unlike: "Like"

@@ -44,6 +44,11 @@
             <%= post.comments.size %> <%= t ".comments" %>
           </span>
         </li>
+        <li class="likes">
+          <% if user_signed_in? %>
+            <%= render "likes/like_form", post: post %>
+          <% end %>
+        </li>
       </ul>
     </div>
     <div class="comments">
