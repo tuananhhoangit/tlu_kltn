@@ -307,6 +307,36 @@
   }
 }
 
+.likes {
+  position: relative;
+
+  .unlike-btn {
+    color: $main-orange;
+    font-weight: bold;
+
+    &:hover {
+      color: $black-text;
+    }
+  }
+
+  .btn-like {
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      color: $main-orange;
+    }
+  }
+
+  .like-icon {
+    bottom: 2px;
+    margin-left: 4px;
+    position: absolute;
+    width: 24px;
+  }
+}
+
 .users {
   background: $white;
   list-style: none;

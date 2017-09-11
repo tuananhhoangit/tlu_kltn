@@ -1,0 +1,3 @@
+<%= link_to t(".unlike"), [@liked.post, @liked], method: :delete,
+  class: "unlike-btn", like_id: @liked.id %>
+<%= image_tag("star.png", class: "like-icon") %>

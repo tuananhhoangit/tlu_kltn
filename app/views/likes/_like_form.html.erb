@@ -1,0 +1,6 @@
+<div class="like-info"><%= @liked = post.likes.find_by user_id: current_user.id %></div>
+<% if post.likes.include?(@liked) %>
+  <%= render "likes/unlike", post: post %>
+<% else %>
+  <%= render "likes/like", post: post, like: post.likes.build %>
+<% end %>
