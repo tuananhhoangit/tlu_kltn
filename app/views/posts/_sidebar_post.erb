@@ -1,0 +1,11 @@
+<div class="blog-grids">
+  <div class="blog-grid-left">
+    <%= link_to sidebar_post do %>
+      <%= image_tag sidebar_post.picture, class: "img-responsive" %>
+    <% end %>
+  </div>
+  <div class="blog-grid-right">
+    <h5><%= link_to sidebar_post.title, sidebar_post %></h5>
+  </div>
+  <div class="clearfix"></div>
+</div>

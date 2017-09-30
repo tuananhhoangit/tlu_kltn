@@ -129,25 +129,33 @@ label{
 /*--social--*/
 /*--search--*/
 .search {
-  float: right;
-  width: 25%;
+  // float: right;
+  // width: 13%;
   margin: 0.2em 0;
 }
 .search {
-  position: relative;
-  border: 2px solid #333333;
-  padding: 0.5em 0;
+  display: block;
+  // position: relative;
+  // border: 2px solid #333333;
+  // padding: 0.5em 0;
   background: #fff;
-  display: none;
 }
 .search input[type="text"]{
-  width: 80%;
+  width: 13%;
   outline: none;
-  padding: 0em 0.6em;
+  padding: 0.5em;
   font-size: 1em;
   color: #333333;
   position: relative;
   border: none;
+  transition: width 0.5s;
+  border: 2px solid #333333;
+  float: right;
+  background: url(search-icon.png) no-repeat right 5px #fff;
+
+  &:focus {
+    width: 25%;
+  }
 }
 .search input[type="submit"]{
   background: url(search-icon.png) no-repeat 0px 2px #fff;
@@ -171,6 +179,9 @@ label{
   background: #fa4b2a;
 }
 /*--navigation--*/
+.navbar-nav {
+  float: none;
+}
 ul.nav.navbar-nav li.active a {
   background:#464646 ! important;
   color: #fff ! important;
@@ -189,6 +200,15 @@ ul.nav.navbar-nav li a {
   border-right: 1px solid rgba(255, 255, 255, 0.32) ! important;
   font-size: 1em;
 }
+
+.signin {
+  float: right !important;
+
+  a {
+    border-left: 1px solid rgba(255, 255, 255, 0.32) !important;
+  }
+}
+
 .head-bottom ul.dropdown-menu li a {
   color: #000 ! important;
   padding:8px 15px ! important;
@@ -367,6 +387,10 @@ i.glyphicon.glyphicon-comment {
   color: #fa4b2a;
   font-weight: 700;
   font-family: 'Roboto Condensed', sans-serif !important;
+
+  &:hover {
+    font-style: italic;
+  }
 }
 .tc-ch p {
   color: #333;
@@ -521,15 +545,19 @@ a.blog.orn{
   margin: 1em 0 0;
   float: left;
 }
-.blog-grid-left {
-  float: left;
-  width: 36%;
+
+.most-like-posts {
+  margin-top: 2em;
+
+  a {
+    color: $delete-black;
+
+    &:hover {
+      color: $main-orange;
+    }
+  }
 }
-.blog-grid-right {
-  float: left;
-  width: 60%;
-  margin-left: 0.5em;
-}
+
 .tech-btm p {
   margin: 1em 0;
   font-size: 0.875em;

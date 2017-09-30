@@ -26,7 +26,7 @@ $(document).ready(function() {
     })
       .done(function(response) {
         if (response.status == 'success') {
-          $('#post-' + post_id).find('h3').text(new_title);
+          $('#post-' + post_id).find('h3 a').text(new_title);
           $('#post-' + post_id).find('p').text(new_content);
           $('.title').val('');
           $('.content').val('');
