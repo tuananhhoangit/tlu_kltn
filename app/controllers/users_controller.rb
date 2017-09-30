@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :valid_user, only: :destroy
-  load_and_authorize_resource
+  load_resource
 
   def index
     if params[:search]

@@ -20,6 +20,7 @@ $(document).ready(function(){
           form_comment.closest('.post-'+post_id).find('.display-comment').append(response.html);
           form_comment.find('.cmt-box').val('');
           $('.edit-comment').hide();
+          form_comment.closest('.comments').find('.display-comment').show();
         }
       });
     return false;

@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     if params[:search]
       @posts = Post.search_post(params[:search]).posts_sort.paginate page: params[:page],
         per_page: Settings.user.per_page
+    elsif params[:most_like]
+      @posts = Post.select(:id, :title, :content, :created_at, :picture, :user_id).left_outer_joins(:likes)
+        .group("posts.id").order("count(likes.id) DESC").paginate page: params[:page],
+        per_page: Settings.user.per_page
     else
       posts_select = Post.select(:id, :title, :content, :created_at, :picture, :user_id).posts_sort
       @posts = posts_select.paginate page: params[:page],

@@ -6,15 +6,21 @@
           <h1><%= t ".glob" %></h1>
         <% end %>
       </div>
-      <div class="search">
-        <form class="search-form" action="users" method="get">
+      <div class="search search-users">
+        <form class="search-users-form" action="users" method="get">
           <input class="input-search" type="text"
             placeholder="<%= t ".search_users" %>" name="search" required=""
             oninvalid="this.setCustomValidity('<%= t ".required_mess" %>')">
-          <input type="submit" value="">
         </form>
       </div>
-      <div class="social">
+      <div class="search search-posts">
+        <form class="search-posts-form" action="posts" method="get">
+          <input class="input-search" type="text"
+            placeholder="<%= t ".search_posts" %>" name="search" required=""
+            oninvalid="this.setCustomValidity('<%= t ".required_mess" %>')">
+        </form>
+      </div>
+      <!-- <div class="social">
         <ul>
           <li class="select-search-users">
             <%= t ".users_search" %>
@@ -25,7 +31,7 @@
             <i class="glyphicon glyphicon-search"></i>
           </li>
         </ul>
-      </div>
+      </div> -->
       <div class="clearfix"></div>
     </div>
   </div>
@@ -66,6 +72,8 @@
             <% if current_user.is_admin? %>
               <li><%= link_to t(".admin"), admin_root_path %></li>
             <% end %>
+          <% else %>
+            <li class="signin"><%= link_to t(".signin"), new_user_session_path %></li>
           <% end %>
         </ul>
       </div>

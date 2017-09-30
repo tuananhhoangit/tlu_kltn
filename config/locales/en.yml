@@ -6,7 +6,6 @@ en:
   danger_not_admin: "Permission Denied"
   you_sure: "You sure?"
   create_tags: "Create some tags"
-  search_posts: "Search posts..."
   search_users: "Search users..."
 
   layouts:
@@ -23,8 +22,9 @@ en:
       logout: "Logout"
       posts: "New Posts"
       users_search: "Search users"
-      posts_search: "Search posts"
+      search_posts: "Search posts..."
       required_mess: "Type something to search"
+      signin: "Sign in"
     footer:
       about_glob: "about glob"
       lorem: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt"
@@ -50,6 +50,7 @@ en:
       signin: "Sign in"
       have_acc: "or have an account?"
       create_post: "Create new post"
+      most_like_post: "Most like posts"
     contact:
       back_to_home: "Back To Home"
       contact_us: "contact us"
