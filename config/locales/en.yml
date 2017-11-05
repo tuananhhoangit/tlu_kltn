@@ -39,6 +39,8 @@ en:
       tuananh: "©2017 GLOB. Hoang Tuan Anh. TLU"
       TLU: "Thang Long University"
       phone: "(84-24) 38 58 73 46 "
+      cancel: "Cancel"
+      save: "Save"
     application:
       title: "GLOB"
 
@@ -51,6 +53,8 @@ en:
       have_acc: "or have an account?"
       create_post: "Create new post"
       most_like_post: "Most like posts"
+      new_title: "New Title"
+      new_content: "New Content"
     contact:
       back_to_home: "Back To Home"
       contact_us: "contact us"
@@ -125,6 +129,7 @@ en:
     index:
       all_posts: "All Posts"
     create:
+      post_created: "Post created successfully"
       success: "Post created successfully"
       fail: "Failed to create new post"
     comment_form:

@@ -1,0 +1,10 @@
+<%= form_for edit_post_form, html: {id: "edit-post-form"} do |f| %>
+  <div class="edit-post-form">
+    <%= f.text_field :title, placeholder: t(".new_title"), class: "new-title" %>
+    <%= f.text_area :content, placeholder: t(".new_content"), class: "new-content" %>
+    <div class="edit-post-btns">
+      <%= f.submit t(".save"), class: "save-edit-post edit-post-btn" %>
+      <%= content_tag :button, t(".cancel"), class: "cancel-edit-post edit-post-btn" %>
+    </div>
+  </div>
+<% end %>

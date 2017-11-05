@@ -37,6 +37,7 @@
         <% if @user.posts.any? %>
           <%= render @posts, user: @user %>
           <%= will_paginate @posts %>
+          <%= render partial: "posts/edit_post_form", collection: @edit_post_forms %>
         <% end %>
       </ul>
     </div>
