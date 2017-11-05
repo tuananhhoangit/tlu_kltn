@@ -310,6 +310,15 @@
 .likes {
   position: relative;
 
+  .new-like {
+    width: 4em;
+  }
+
+  .likes-size {
+    float: left;
+    margin-right: 3px;
+  }
+
   .unlike-btn {
     color: $main-orange;
     font-weight: bold;

@@ -16,11 +16,6 @@
           </div>
 
           <div class="field">
-            <%= f.label :email, t(".email") %>
-            <%= f.email_field :email, autofocus: true %>
-          </div>
-
-          <div class="field">
             <%= f.label :password, t(".password") %> <i>(<%= t ".blank_pass" %>)</i>
             <%= f.password_field :password, autocomplete: "off",
               placeholder: t(".min_char") %>
