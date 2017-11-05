@@ -433,6 +433,11 @@ a.blog.orn{
     // position: absolute;
     top: -33px;
   }
+
+#edit-post-form {
+  display: none;
+}
+
   .technology {
     min-height: 203em;
   }
@@ -442,7 +447,54 @@ a.blog.orn{
 
     .main-info {
       display: inline-block;
-      max-width: 97%;
+      width: 97%;
+
+      .new-title {
+        border: 0;
+        margin-left: 10px;
+        padding: 10px;
+        width: 100%;
+        border-top: 1px solid $devine-grey;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      .new-content {
+        border: 0;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        height: 4em;
+        margin-left: 10px;
+        padding: 10px;
+        resize: none;
+        width: 100%;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      .edit-post-btns {
+        float: right;
+        margin-bottom: 5px;
+
+        .edit-post-btn {
+          border: 0;
+          background-color: #f6f7f9;
+          border-radius: 16px;
+          cursor: pointer;
+          font-weight: normal;
+          padding: 0 10px;
+
+          &:hover {
+            background-color: #dddfe2;
+            color: #fa4b2a;
+            transition: .5s all;
+          }
+        }
+      }
     }
 
     .dropdown {

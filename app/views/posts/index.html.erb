@@ -5,7 +5,14 @@
       <ul class="main">
         <%= render @posts %>
         <%= will_paginate @posts %>
+        <%= render partial: "posts/edit_post_form", collection: @edit_post_forms %>
       </ul>
+    </div>
+    <div class="col-md-3">
+      <div class="tech-btm most-like-posts">
+        <h4><%= link_to t(".most_like_post"), posts_path(most_like: "") %></h4>
+        <%= render partial: "posts/sidebar_post", collection: @sidebar_posts %>
+      </div>
     </div>
   </div>
 </div>

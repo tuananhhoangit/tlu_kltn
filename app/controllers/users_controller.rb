@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   load_resource
 
   def index
+    @sidebar_posts_select = Post.select(:id, :title, :picture).left_outer_joins(:likes)
+      .group("posts.id").order("count(likes.id) DESC")
+    @sidebar_posts = @sidebar_posts_select.first 5
     if params[:search]
       @users = User.search_user(params[:search]).order(:name).paginate page: params[:page],
         per_page: Settings.user.per_page
@@ -15,6 +18,9 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts.select(:id, :title, :content, :picture, :user_id,
+      :created_at).order(created_at: :desc).paginate page: params[:page],
+      per_page: Settings.user.per_page
+    @edit_post_forms = @user.posts.select(:id, :title, :content, :picture, :user_id,
       :created_at).order(created_at: :desc).paginate page: params[:page],
       per_page: Settings.user.per_page
     @post = @user.posts.build

@@ -4,7 +4,7 @@ $(document).ready(function() {
     var post_id = $(this).closest('.post-item').attr('post_id');
     var btn_like = $(this);
     $.ajax({
-      url: btn_like.closest('.new_like').attr('action'),
+      url: btn_like.closest('.new-like').attr('action'),
       type: 'POST',
       dataType: 'json',
       data: {post_id: post_id},

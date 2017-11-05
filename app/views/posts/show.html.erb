@@ -2,13 +2,13 @@
   <div class="row">
     <ul class="col-md-9">
       <li class="tech-no">
-        <div class="soci">
+        <!-- <div class="soci">
           <ul>
             <%= social_share_button_tag(@post.title, :allow_sites => %w(facebook)) %>
             <%= social_share_button_tag(@post.title, :allow_sites => %w(twitter)) %>
             <%= social_share_button_tag(@post.title, :allow_sites => %w(google_plus)) %>
           </ul>
-        </div>
+        </div> -->
         <div class="tc-ch post-item post-<%= @post.id %>"
           id = "post-<%= @post.id %>" post_id = "<%= @post.id %>">
           <div class="tch-img">
@@ -19,6 +19,19 @@
             <h5><%= @post.all_tags %></h5>
             <p><%= @post.content %></p>
           </div>
+          <% if can? :destroy, @post %>
+            <div class="dropdown action-btn">
+              <i class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown"
+                role="button" aria-haspopup="true" aria-expanded="false">
+              </i>
+              <div class="actions dropdown-menu">
+                <%= link_to t(".delete"), @post, method: :delete, class: "action delete-post" %>
+                <% if can? :modify, @post %>
+                  <%= content_tag :span, t(".edit"), class: "action edit-post", post_id: @post.id %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
           <div class="blog-poast-info">
             <ul>
               <li>
@@ -55,3 +68,4 @@
     </ul>
   </div>
 </div>
+<%= render partial: "posts/edit_post_form", collection: @edit_post_forms %>

@@ -1,3 +1,4 @@
+<span class="likes-size">(<%= post.likes.size %>)</span>
 <div class="like-info"><%= @liked = post.likes.find_by user_id: current_user.id %></div>
 <% if post.likes.include?(@liked) %>
   <%= render "likes/unlike", post: post %>
